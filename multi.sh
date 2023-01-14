@@ -1,6 +1,6 @@
 #!/bin/sh
 
-docker manifest create 80x86/typecho:latest 80x86/typecho:amd64 80x86/typecho:arm64
-docker manifest annotate 80x86/typecho:latest 80x86/typecho:amd64 --os linux --arch amd64
-docker manifest annotate 80x86/typecho:latest 80x86/typecho:arm64 --os linux --arch arm64
-docker manifest push 80x86/typecho:latest --purge
+docker manifest create maxmib/typecho:latest maxmib/typecho:amd64 maxmib/typecho:arm64
+docker manifest annotate maxmib/typecho:latest maxmib/typecho:amd64 --os linux --arch amd64
+docker manifest annotate maxmib/typecho:latest maxmib/typecho:arm64 --os linux --arch arm64
+docker manifest push maxmib/typecho:latest --purge
