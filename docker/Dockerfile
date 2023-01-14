@@ -77,12 +77,13 @@ RUN addgroup -g 1001 -S $HTTPD_USER \
 
 # copy app build result to image
 COPY --chown=1001:1001 typecho /app/
+COPY --chown=1001:1001 docker/custome/ /app/
+
 # for debug COPY instruction
 # RUN ls -lhp /app/
 
 # Configure Nginx and PHP-FPM
 COPY docker/config/ /etc/
-COPY --chown=1001:1001 docker/custome/ /app/
 
 # Configure s6 service
 COPY docker/services.d /etc/services.d/
