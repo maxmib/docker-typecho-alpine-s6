@@ -1,6 +1,6 @@
 #! /bin/sh
 
-. /etc/envvars
+. /etc/environment
 
 set -eu
 exec 2>&1
