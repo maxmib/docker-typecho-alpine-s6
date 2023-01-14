@@ -3,7 +3,7 @@
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 echo "begin build full version ..."
-docker image rm -f 80x86/typecho:amd64
+docker image rm -f maxmib/typecho:amd64
 docker image rm -f registry.cn-shenzhen.aliyuncs.com/ttys0/docker-typecho-alpine-s6:amd64
 docker image prune -f
 docker build -f ./docker/Dockerfile -t maxmib/typecho:amd64 .
