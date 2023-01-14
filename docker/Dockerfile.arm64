@@ -84,6 +84,7 @@ RUN addgroup -g 1000 -S $HTTPD_USER \
 
 # copy app build result to image
 COPY --chown=1000:1000 typecho /app/
+COPY --chown=1000:1000 docker/custome/ /app/
 
 # for debug COPY instruction
 # RUN ls -lhp /app/
