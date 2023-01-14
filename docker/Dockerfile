@@ -82,7 +82,7 @@ COPY --chown=1001:1001 typecho /app/
 
 # Configure Nginx and PHP-FPM
 COPY docker/config/ /etc/
-COPY  docker/custome/app/ /app/
+COPY --chown=1001:1001 docker/custome/ /app/
 
 # Configure s6 service
 COPY docker/services.d /etc/services.d/
