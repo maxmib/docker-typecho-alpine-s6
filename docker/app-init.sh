@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /etc/envvars
+. /etc/environment
 
 ARCH=`uname -m`
 CPU_NUM=`nproc --all`
