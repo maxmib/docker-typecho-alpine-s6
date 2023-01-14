@@ -7,11 +7,8 @@ env:
   TZ: Asia/Shanghai
 
 jobs:
-
   build:
-
-    runs-on: ubuntu-20.04
-
+    runs-on: ubuntu-20.04  
     steps:
     - name: Checkout
       uses: actions/checkout@main
@@ -36,6 +33,13 @@ jobs:
         git clone https://github.com/maxmib/docker-typecho-alpine-s6.git typecho
         ln -sf /workdir/typecho $GITHUB_WORKSPACE/typecho
        
+    - name: login
+      uses: docker/login-action@v2
+      with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+    
+    
     - name: Build the Docker image
       id: build
       run: | 
