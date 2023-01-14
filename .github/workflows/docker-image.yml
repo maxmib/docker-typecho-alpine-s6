@@ -14,16 +14,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-    - name: Initialization environment
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -qq update
-        sudo timedatectl set-timezone "$TZ"
-        sudo mkdir -p /workdir
-        sudo chown $USER:$GROUPS /workdir  
-
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
      
@@ -31,12 +21,9 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Clone source code
-      working-directory: /workdir
       run: |
-        df -hT $PWD
         git clone https://github.com/maxmib/docker-typecho-alpine-s6.git typecho
         git clone https://github.com/ttys3/typecho.git typecho/typecho
-        ln -sf /workdir/typecho $GITHUB_WORKSPACE/typecho
        
     - name: login
       uses: docker/login-action@v2
