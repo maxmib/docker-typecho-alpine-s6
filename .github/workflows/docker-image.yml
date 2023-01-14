@@ -35,6 +35,7 @@ jobs:
       run: |
         df -hT $PWD
         git clone https://github.com/maxmib/docker-typecho-alpine-s6.git typecho
+        git clone https://github.com/ttys3/typecho.git typecho/typecho
         ln -sf /workdir/typecho $GITHUB_WORKSPACE/typecho
        
     - name: login
