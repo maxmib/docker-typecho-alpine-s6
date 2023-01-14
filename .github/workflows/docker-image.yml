@@ -2,7 +2,8 @@ name: Docker Image CI
 
 on:
   repository_dispatch:
-
+  workflow_dispatch:
+  
 env:
   TZ: Asia/Shanghai
 
