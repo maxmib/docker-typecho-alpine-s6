@@ -72,11 +72,11 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 
 # create www user for php-fpm
 RUN addgroup -g 1001 -S $HTTPD_USER \
-    && adduser -u 1000 -D -S -G $HTTPD_USER -h /app -g $HTTPD_USER $HTTPD_USER \
+    && adduser -u 1001 -D -S -G $HTTPD_USER -h /app -g $HTTPD_USER $HTTPD_USER \
     && chown -R nginx:nginx /var/lib/nginx
 
 # copy app build result to image
-COPY --chown=1000:1001 typecho /app/
+COPY --chown=1001:1001 typecho /app/
 
 # for debug COPY instruction
 # RUN ls -lhp /app/
