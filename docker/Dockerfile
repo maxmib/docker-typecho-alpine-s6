@@ -91,7 +91,6 @@ RUN chmod +x /etc/services.d/*/run
 # inject before run
 # ref to https://github.com/dockage/runit-scripts/tree/master/alpine/etc/sv
 COPY docker/app-init.sh docker/inject.sh /
-COPY docker/custome/admin/* 
 RUN cp -r docker/custome/app/* /app/ \
     && chmod +x /app-init.sh \
         && chmod +x /inject.sh
