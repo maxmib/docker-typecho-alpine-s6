@@ -14,8 +14,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-    - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
+#    - name: Set up QEMU
+#      uses: docker/setup-qemu-action@v2
      
 
     - name: Clone source code
