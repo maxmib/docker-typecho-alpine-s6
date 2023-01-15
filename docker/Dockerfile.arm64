@@ -13,6 +13,8 @@
 FROM 80x86/base-alpine:arm64
 #COPY --from=qemu_extract qemu-aarch64-static /usr/bin
 
+LABEL   org.label-schema.name="docker-typecho-alpine-s6" \
+        org.label-schema.description="Docker image uses s6 as a process supervision run typecho under nginx and php-fpm on Alpine Linux" 
 
 # Environment variables
 ENV     PUID='1001' \
