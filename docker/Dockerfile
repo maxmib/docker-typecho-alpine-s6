@@ -6,7 +6,7 @@
 FROM 80x86/base-alpine:latest
 
 LABEL   org.label-schema.name="docker-typecho-alpine-s6" \
-        org.label-schema.description="Docker image uses s6 as a process supervision run typecho under nginx and php-fpm on Alpine Linux" \
+        org.label-schema.description="Docker image uses s6 as a process supervision run typecho under nginx and php-fpm on Alpine Linux" 
 
 
 # Environment variables
