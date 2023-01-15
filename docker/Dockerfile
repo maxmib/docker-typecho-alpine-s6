@@ -5,13 +5,9 @@
 
 FROM 80x86/base-alpine:latest
 
-LABEL maintainer='HuangYeWuDeng <***@ttys0.in>' \
-        org.label-schema.name="docker-typecho-alpine-s6" \
-        org.label-schema.vendor="HuangYeWuDeng" \
+LABEL   org.label-schema.name="docker-typecho-alpine-s6" \
         org.label-schema.description="Docker image uses s6 as a process supervision run typecho under nginx and php-fpm on Alpine Linux" \
-        org.label-schema.vcs-url="https://bitbucket.org/8ox86/docker-typecho-alpine-s6" \
-        org.label-schema.version="1.4" \
-        org.label-schema.license="MIT"
+
 
 # Environment variables
 ENV     PUID='1001' \
