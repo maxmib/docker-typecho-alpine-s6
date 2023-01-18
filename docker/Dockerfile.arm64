@@ -17,8 +17,8 @@ LABEL   org.label-schema.name="docker-typecho-alpine-s6" \
         org.label-schema.description="Docker image uses s6 as a process supervision run typecho under nginx and php-fpm on Alpine Linux" 
 
 # Environment variables
-ENV     PUID='1002' \
-        PGID='1002' \
+ENV     PUID='1000' \
+        PGID='1000' \
         HTTPD_USER='www' \
         PHP_TZ=Asia/Shanghai \
         PHP_MAX_EXECUTION_TIME=600 \
@@ -74,13 +74,13 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 #    && adduser -u "$PUID" -D -S -G "$USER" -h /app -g "$USER" "$USER"
 
 # create www user for php-fpm
-RUN addgroup -g 1002 -S $HTTPD_USER \
-    && adduser -u 1002 -D -S -G $HTTPD_USER -h /app -g $HTTPD_USER $HTTPD_USER \
+RUN addgroup -g 1000 -S $HTTPD_USER \
+    && adduser -u 1000 -D -S -G $HTTPD_USER -h /app -g $HTTPD_USER $HTTPD_USER \
     && chown -R nginx:nginx /var/lib/nginx
 
 # copy app build result to image
-COPY --chown=1002:1002 typecho /app/
-COPY --chown=1002:1002 docker/custome/ /app/
+COPY --chown=1000:1000 typecho /app/
+COPY --chown=1000:1000 docker/custome/ /app/
 
 # for debug COPY instruction
 # RUN ls -lhp /app/
