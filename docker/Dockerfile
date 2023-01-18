@@ -10,8 +10,8 @@ LABEL   org.label-schema.name="docker-typecho-alpine-s6" \
 
 
 # Environment variables
-ENV     PUID='1000' \
-        PGID='1000' \
+ENV     PUID='1001' \
+        PGID='1001' \
         HTTPD_USER='www' \
         PHP_TZ=Asia/Shanghai \
         PHP_MAX_EXECUTION_TIME=600 \
@@ -67,13 +67,13 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 #    && adduser -u "$PUID" -D -S -G "$USER" -h /app -g "$USER" "$USER"
 
 # create www user for php-fpm
-RUN addgroup -g 1000 -S $HTTPD_USER \
-    && adduser -u 1000 -D -S -G $HTTPD_USER -h /app -g $HTTPD_USER $HTTPD_USER \
+RUN addgroup -g $PGID -S $HTTPD_USER \
+    && adduser -u $PUID -D -S -G $HTTPD_USER -h /app -g $HTTPD_USER $HTTPD_USER \
     && chown -R nginx:nginx /var/lib/nginx
 
 # copy app build result to image
-COPY --chown=1000:1000 typecho /app/
-COPY --chown=1000:1000 docker/custome/ /app/
+COPY --chown=$PUID:$PGID typecho /app/
+COPY --chown=$PUID:$PGID docker/custome/ /app/
 
 # for debug COPY instruction
 # RUN ls -lhp /app/
