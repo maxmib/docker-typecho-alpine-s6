@@ -34,6 +34,6 @@ jobs:
       id: build
       run: | 
         cd typecho
-        sudo chmod +x build.sh
-        sudo bash build.sh
+        chmod +x build.sh
+        bash build.sh
      
