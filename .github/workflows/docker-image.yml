@@ -36,4 +36,11 @@ jobs:
         cd typecho
         chmod +x build.sh
         bash build.sh
-     
+
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@main
+      with:
+        token: ${{github.token}}
+        repository: ${{github.repository}}
+        retain_days: 5
+        keep_minimum_runs: 3
