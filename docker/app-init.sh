@@ -56,7 +56,7 @@ fi
 
 echo "**** Set Permissions ****"
 chown -R "$HTTPD_USER":"$HTTPD_USER" /data
-chmod -R a+rw /data
+chmod -R a+rwx /data
 chown -R "$HTTPD_USER":"$HTTPD_USER" /app
 
 echo "**** Setup complete, starting the server. ****"
