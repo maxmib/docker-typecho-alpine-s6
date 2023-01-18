@@ -67,8 +67,8 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 #    && adduser -u "$PUID" -D -S -G "$USER" -h /app -g "$USER" "$USER"
 
 # create www user for php-fpm
-RUN addgroup -g 1002 -S $HTTPD_USER \
-    && adduser -u 1002  -S -G $HTTPD_USER $HTTPD_USER \
+RUN addgroup -g 1002  $HTTPD_USER \
+    && adduser -u 1002 -D -G $HTTPD_USER $HTTPD_USER \
     && chown -R nginx:nginx /var/lib/nginx
 
 # copy app build result to image
