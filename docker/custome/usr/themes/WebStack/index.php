@@ -16,7 +16,7 @@ $this->need('header.php');
        <ul class="user-info-menu left-links list-inline list-unstyled">	 
      <li><span class="board-title zmki_wap_zsy1"><a href="<?php $this->options->siteUrl();?>" ><i class="fa fa-home  "></i> 首页</a></span></li>
 	 <li><span class="board-title"><a  target="_blank" href="<?php $this->options->zmki_links(); ?>"><i class="fa fa-wrench"></i> 网站设置</a></span></li>
-	 <li><span class="board-title "><a target="_blank" href="<?php $this->options->zmki_url(); ?>" target="_blank"><i class="fa fa-cloud-download " ></i>&nbsp;<?php $this->options->zmki_name(); ?></a></span></li>
+	 <li><span class="board-title "><a target="_blank" href="<?php $this->options->zmki_url(); ?>"><i class="fa fa-cloud-download" ></i>&nbsp;<?php $this->options->zmki_name(); ?></a></span></li>
 	 <li><div class="zmki_wap" id="tp-weather-widget"> </li>
 	 <?php if($this->options->zmki_ah == '1'): ?>  
 	 <li><div class="zmki_yldh zmki_wap_zsy2"  title="切换模式"><a href="javascript:switchNightMode()"  target="_self"><svg  class="icon zmki_dh" aria-hidden="true"><use xlink:href="#icon-yueliang2"></use></svg></a></div></li> 
