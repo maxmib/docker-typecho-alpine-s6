@@ -82,7 +82,7 @@ $this->need('header.php');
 	<div class="xe-widget xe-conversations box2 label-info" onclick="window.open('<?php echo $posts->fields->url;?>', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $posts->fields->url;?>">
     <div class="xe-comment-entry">
           <a class="xe-user-img">
-            <img src="<?php if (($posts->fields->logo)==""){echo 'http://10.0.0.103:90/favicon.php?url='.$posts->fields->url;}else{echo $posts->fields->logo;}?>" class="img-circle" width="32">
+            <img src="<?php if (($posts->fields->logo)==""){echo 'http://'.$_SERVER['HTTP_HOST'].'/favicon.php?url='.$posts->fields->url;}else{echo $posts->fields->logo;}?>" class="img-circle" width="32">
           </a>
 	<div class="xe-comment">
           <a href="#" class="xe-user-name overflowClip_1">
@@ -97,7 +97,7 @@ $this->need('header.php');
       <div class="xe-widget xe-conversations box2 label-info" >
         <div class="xe-user-img">
           <div class="xe-comment-entry">
-            <a href="<?php $posts->permalink() ?>"><img src="<?php if (($posts->fields->logo)==""){echo 'http://10.0.0.103:90/favicon.php?url='.$posts->fields->url;}else{echo $posts->fields->logo;}?>" class="img-circle" width="40">
+            <a href="<?php $posts->permalink() ?>"><img src="<?php if (($posts->fields->logo)==""){echo 'http://'.$_SERVER['HTTP_HOST'].'/favicon.php?url='.$posts->fields->url;}else{echo $posts->fields->logo;}?>" class="img-circle" width="40">
             <div class="xe-comment"  data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $posts->fields->url;?>">
               <strong><?php $posts->title(); ?></strong>
               <p class="overflowClip_2"><?php echo $posts->fields->text;?></p>
